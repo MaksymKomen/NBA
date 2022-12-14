@@ -84,7 +84,7 @@ function App() {
           <label htmlFor=""> Current Time: <span> {flag === false ? "00:00" : current} </span> </label>
         </div>      
         <div className="section mt-2">
-          <label htmlFor=""> Current Total Score for Quarter : <span> {flag == false ? 0 : team1 + team2} </span> </label>
+          <label htmlFor=""> Current Total Score for Quarter : <span> {flag === false ? 0 : team1 + team2} </span> </label>
         </div>
         <div className="section mt-2">
           <label htmlFor=""> Current Pace per minute : <span> {flag === false ? 0 : ((team1 + team2) / elapsed * 60).toFixed(4)} </span> </label>
