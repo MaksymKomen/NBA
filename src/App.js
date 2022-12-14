@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import cheerio from "cheerio";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -42,8 +42,8 @@ function App() {
             setCurrent(current.trim());
             $('div.scoresDetails .content .active').each((_idx, el) => {
               const score = $(el).text();
-              if (_idx == 0)  setTeam1(parseInt(score));
-              if (_idx == 2)  setTeam2(parseInt(score));
+              if (_idx === 0)  setTeam1(parseInt(score));
+              if (_idx === 2)  setTeam2(parseInt(score));
             });
           } catch (error) {
             throw error;
@@ -54,7 +54,7 @@ function App() {
 
       return () => clearInterval(interval)
     }
-  }, [flag]);
+  }, [flag, url]);
 
   useEffect(() => {
     let currentTime = current.substring(3);
@@ -81,19 +81,19 @@ function App() {
           <input type="text" defaultValue={10} onChange={quarterChange} />
         </div>
         <div className="section mt-2">
-          <label htmlFor=""> Current Time: <span> {flag == false ? "00:00" : current} </span> </label>
+          <label htmlFor=""> Current Time: <span> {flag === false ? "00:00" : current} </span> </label>
         </div>      
         <div className="section mt-2">
           <label htmlFor=""> Current Total Score for Quarter : <span> {flag == false ? 0 : team1 + team2} </span> </label>
         </div>
         <div className="section mt-2">
-          <label htmlFor=""> Current Pace per minute : <span> {flag == false ? 0 : ((team1 + team2) / elapsed * 60).toFixed(4)} </span> </label>
+          <label htmlFor=""> Current Pace per minute : <span> {flag === false ? 0 : ((team1 + team2) / elapsed * 60).toFixed(4)} </span> </label>
         </div>           
         <div className="section mt-2">
-          <label htmlFor=""> Current Projected Total Score : <span> {flag == false ? 0 : ((team1 + team2) / elapsed * 60).toFixed(4)} </span> </label>
+          <label htmlFor=""> Current Projected Total Score : <span> {flag === false ? 0 : ((team1 + team2) / elapsed * 60).toFixed(4)} </span> </label>
         </div>   
         <div className="section mt-2">
-          <label htmlFor=""> Time Elapsed: <span> {flag == false ? "0 min 0 sec" : Math.floor(elapsed / 60) + " min " + elapsed % 60 + " sec"} </span> </label>
+          <label htmlFor=""> Time Elapsed: <span> {flag === false ? "0 min 0 sec" : Math.floor(elapsed / 60) + " min " + elapsed % 60 + " sec"} </span> </label>
         </div>
       </div>
     </div>
