@@ -20,7 +20,7 @@ function App() {
 
   const urlChange = (e) => {
     let temp = e.target.value;
-    setUrl(e.target.value);
+    setUrl(temp);
     // setUrl(temp.substr(23, temp.length-23));
   }
 
