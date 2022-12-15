@@ -70,9 +70,7 @@ function App() {
 
   return (
     <div className="App mt-5">
-      <h4> Hi, Michael. You can contact me via </h4>
-      <h4> Gmail: minionboss0626@gmail.com, Telegram: Minion Boss, Skype: live:.cid.4caa89ed3d550b5c </h4>
-      <hr />
+     
       <h1> NBA calc </h1>
         <button className={flag ? "btn btn-warning": "btn btn-primary"} onClick={handleStart}> {flag ? "Stop Scraping" : "Start Scraping"} </button>
         <div className="section mt-4">
