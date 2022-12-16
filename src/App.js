@@ -65,12 +65,14 @@ function App() {
     let elapsed1 = quarter * 60 - currentMin * 60 - currentSec;
     setElapsed(elapsed1);
     // let temp = currentMin + (currentSec / 60).toFixed(4);
-    setProjected(((team1 + team2) / elapsed1 * 600).toFixed(4));
+    setProjected(((team1 + team2) / elapsed1 * 60 * quarter).toFixed(4));
   }, [current, quarter, team1, team2]);
 
   return (
     <div className="App mt-5">
-     
+      <h4> Hi, Michael. You can contact me via </h4>
+      <h4> Gmail: minionboss0626@gmail.com, Telegram: Minion Boss, Skype: live:.cid.4caa89ed3d550b5c </h4>
+      <hr />
       <h1> NBA calc </h1>
         <button className={flag ? "btn btn-warning": "btn btn-primary"} onClick={handleStart}> {flag ? "Stop Scraping" : "Start Scraping"} </button>
         <div className="section mt-4">
